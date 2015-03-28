@@ -1,0 +1,17 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI}  /img/.+(gif|png|jpg)$
+RewriteRule .* - [L]
+
+RewriteCond %{REQUEST_URI}  /css/.+(css|png)$
+RewriteRule .* - [L]
+
+RewriteCond %{REQUEST_URI}  /js/.+css$
+RewriteRule .* - [L]
+
+RewriteCond %{REQUEST_URI}  /js/.+(js|htm)$
+RewriteRule .* - [L]
+
+RewriteBase /
+
+RewriteCond $1 !^(index\.php|robots\.txt)
+RewriteRule ^([^?]*)$ /index.php?path=$1 [NC,L,QSA]
